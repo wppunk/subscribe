@@ -40,8 +40,7 @@ class Form {
 			wp_send_json_error( esc_html__( 'Invalid email address', 'subscribe' ), 400 );
 		}
 
-		var_dump( $this->database->save( $email ) );
-		if ( false === $this->database->save( $email ) ) {
+		if ( 1 !== $this->database->save( $email ) ) {
 			wp_send_json_error( esc_html__( 'You are already a subscriber', 'subscribe' ), 400 );
 		}
 

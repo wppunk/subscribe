@@ -9,7 +9,9 @@
  * Text Domain:       subscribe
  */
 
+use Subscribe\Form;
 use Subscribe\Database;
+use Subscribe\Frontend;
 
 define( 'SUBSCRIBE_VERSION', '1.0.0' );
 define( 'SUBSCRIBE_PATH', plugin_dir_path( __FILE__ ) );
@@ -19,8 +21,8 @@ function subscribe_form() {
 
 	require SUBSCRIBE_PATH . 'vendor/autoload.php';
 
-	( new \Subscribe\Form( new Database() ) )->add_hooks();
-	( new \Subscribe\Frontend() )->add_hooks();
+	( new Form( new Database() ) )->add_hooks();
+	( new Frontend() )->add_hooks();
 }
 
 add_action( 'plugins_loaded', 'subscribe_form' );
