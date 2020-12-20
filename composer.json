@@ -1,0 +1,17 @@
+{
+    "name": "wppunk/subscribe",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WPPunk",
+            "email": "i@wp-punk.com"
+        }
+    ],
+    "minimum-stability": "stable",
+	"require": {},
+	"autoload": {
+		"psr-4": {
+			"Subscribe\\": "src"
+		}
+	}
+}
