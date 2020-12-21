@@ -21,6 +21,7 @@ class Form {
 
 	public function view() {
 
+		ob_start();
 		?>
 		<form action="" method="POST" class="subscribe-form">
 			<input type="hidden" name="subscribe_nonce" value="<?php echo esc_attr( wp_create_nonce( 'subscribe-form' ) ); ?>">
@@ -29,12 +30,14 @@ class Form {
 			<div class="subscribe-message" style="display: none"></div>
 		</form>
 		<?php
+
+		return ob_get_clean();
 	}
 
 	public function ajax_callback() {
 
 		check_ajax_referer( 'subscribe-form', 'nonce' );
-		$email = filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL );
+		$email = sanitize_email( filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) );
 
 		if ( ! $email ) {
 			wp_send_json_error( esc_html__( 'Invalid email address', 'subscribe' ), 400 );
