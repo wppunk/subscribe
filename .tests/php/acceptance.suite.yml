@@ -10,7 +10,7 @@ extensions:
     enabled:
         -   Codeception\Extension\RunProcess:
                 0: chromedriver --url-base=/wd/hub
-                sleep: 5 # wait 5 seconds for processes to boot
+                sleep: 2 # wait 5 seconds for processes to boot
         - Codeception\Extension\RunFailed
     commands:
         - Codeception\Command\GenerateWPUnit
