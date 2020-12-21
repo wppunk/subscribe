@@ -24,7 +24,7 @@ jQuery( function( $ ) {
 			},
 			beforeSend: function( xhr ) {
 				$form.addClass( 'submitting' );
-				$message.removeClass( 'subscribe-message--success', 'subscribe-message--error' ).slideUp();
+				$message.removeClass( 'subscribe-message--success subscribe-message--error' ).slideUp();
 			},
 			success: function( response ) {
 				$message.text( response.data ).addClass( 'subscribe-message--success' ).slideDown();
