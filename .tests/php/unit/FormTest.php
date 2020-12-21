@@ -51,11 +51,7 @@ class FormTest extends SubscribeTestCase {
 		</form>
 		';
 
-		ob_start();
-		$subject->view();
-		$output = ob_get_clean();
-
-		$this->assertSame( $expected, $output );
+		$this->assertSame( $expected, $subject->view() );
 	}
 
 	/**
@@ -73,6 +69,7 @@ class FormTest extends SubscribeTestCase {
 		$subject = new Form( $db );
 
 		WP_Mock::userFunction( 'check_ajax_referer' )->with( 'subscribe-form', 'nonce' );
+		WP_Mock::userFunction( 'sanitize_email' )->with( $email )->andReturn( $email );
 
 		FunctionMocker::replace(
 			'filter_input',
