@@ -1,9 +1,20 @@
 <?php
+/**
+ * Database class file.
+ *
+ * @package Subscribe
+ */
 
 namespace Subscribe;
 
+/**
+ * Class Database
+ */
 class Database {
 
+	/**
+	 * Create table.
+	 */
 	public static function create_table() {
 
 		global $wpdb;
@@ -20,9 +31,18 @@ class Database {
 		maybe_create_table( self::table_name(), $sql );
 	}
 
+	/**
+	 * Save email to db.
+	 *
+	 * @param string $email Email.
+	 *
+	 * @return bool|int
+	 */
 	public function save( $email ) {
 
 		global $wpdb;
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 		return $wpdb->insert(
 			self::table_name(),
 			[
@@ -31,6 +51,11 @@ class Database {
 		);
 	}
 
+	/**
+	 * Get table name.
+	 *
+	 * @return string
+	 */
 	private static function table_name() {
 
 		global $wpdb;

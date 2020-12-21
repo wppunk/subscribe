@@ -1,16 +1,39 @@
 <?php
+/**
+ * Form class file
+ *
+ * @package Subscribe
+ */
 
 namespace Subscribe;
 
+use wpdb;
+
+/**
+ * Class Form
+ */
 class Form {
 
+	/**
+	 * Database class instance.
+	 *
+	 * @var Database
+	 */
 	private $database;
 
+	/**
+	 * Form constructor.
+	 *
+	 * @param Database $database Database class instance.
+	 */
 	public function __construct( Database $database ) {
 
 		$this->database = $database;
 	}
 
+	/**
+	 * Add hooks.
+	 */
 	public function add_hooks() {
 
 		add_shortcode( 'subscribe_form', [ $this, 'view' ] );
@@ -19,6 +42,9 @@ class Form {
 		add_action( 'wp_ajax_nopriv_subscribe_form', [ $this, 'ajax_callback' ] );
 	}
 
+	/**
+	 * Output form.
+	 */
 	public function view() {
 
 		ob_start();
@@ -34,6 +60,9 @@ class Form {
 		return ob_get_clean();
 	}
 
+	/**
+	 * Ajax callback.
+	 */
 	public function ajax_callback() {
 
 		check_ajax_referer( 'subscribe-form', 'nonce' );
