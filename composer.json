@@ -13,7 +13,9 @@
 		}
 	},
 	"minimum-stability": "stable",
-	"require": {},
+	"require": {
+		"ext-json": "*"
+	},
 	"autoload": {
 		"psr-4": {
 			"Subscribe\\": "src"
@@ -31,6 +33,7 @@
 	"scripts": {
 		"acceptance": "codecept run acceptance -c .codeception.yml",
 		"integration": "codecept run wpunit -c .codeception.yml",
-		"unit": "codecept run unit -c .codeception.yml"
+		"unit": "codecept run unit -c .codeception.yml",
+		"clean":  "codecept clean"
 	}
 }
