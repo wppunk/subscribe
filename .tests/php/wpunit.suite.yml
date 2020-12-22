@@ -1,7 +1,9 @@
 modules:
+    enabled:
+        - WPLoader
     config:
         WPLoader:
-            wpRootFolder: '%ROOT_PATH%'
+            wpRootFolder: '%WP_ROOT_PATH%'
             dbName: '%DB_NAME%'
             dbHost: '%DB_HOST%'
             dbUser: '%DB_USER%'

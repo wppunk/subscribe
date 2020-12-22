@@ -1,6 +1,9 @@
 <?php
 
+namespace Subscribe\Tests\WPUnit;
+
 use Codeception\TestCase\WPAjaxTestCase;
+use WPAjaxDieContinueException;
 
 /**
  * Class SubmitAjax

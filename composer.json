@@ -21,6 +21,13 @@
 			"Subscribe\\": "src"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"Subscribe\\": "src",
+			"Subscribe\\Tests\\": ".tests/php/unit",
+			"Subscribe\\Tests\\WPUnit\\": ".tests/php/wpunit"
+		}
+	},
 	"require-dev": {
 		"codeception/codeception": "^4.1",
 		"codeception/module-asserts": "^1.3",
