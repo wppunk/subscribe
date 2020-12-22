@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64e79c70e50c736b9b7654c960004ed4",
+    "content-hash": "20fdb38e433774dfdfe7ea80463ef387",
     "packages": [],
     "packages-dev": [
         {
@@ -162,76 +162,6 @@
                 "source": "https://github.com/Behat/Gherkin/tree/master"
             },
             "time": "2020-03-17T14:03:26+00:00"
-        },
-        {
-            "name": "brain/monkey",
-            "version": "2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Brain-WP/BrainMonkey.git",
-                "reference": "7042140000b4b18034c0c0010d86274a00f25442"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Brain-WP/BrainMonkey/zipball/7042140000b4b18034c0c0010d86274a00f25442",
-                "reference": "7042140000b4b18034c0c0010d86274a00f25442",
-                "shasum": ""
-            },
-            "require": {
-                "antecedent/patchwork": "^2.0",
-                "mockery/mockery": ">=0.9 <2",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.6 || ^0.7",
-                "phpcompatibility/php-compatibility": "^9.3.0",
-                "phpunit/phpunit": "^5.7.9 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-version/1": "1.x-dev",
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Brain\\Monkey\\": "src/"
-                },
-                "files": [
-                    "inc/api.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Giuseppe Mazzapica",
-                    "email": "giuseppe.mazzapica@gmail.com",
-                    "homepage": "https://gmazzap.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Mocking utility for PHP functions and WordPress plugin API",
-            "keywords": [
-                "Monkey Patching",
-                "interception",
-                "mock",
-                "mock functions",
-                "mockery",
-                "patchwork",
-                "redefinition",
-                "runkit",
-                "test",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/Brain-WP/BrainMonkey/issues",
-                "source": "https://github.com/Brain-WP/BrainMonkey"
-            },
-            "time": "2020-10-13T17:56:14+00:00"
         },
         {
             "name": "codeception/codeception",
@@ -5862,5 +5792,8 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.4"
+    },
     "plugin-api-version": "2.0.0"
 }

@@ -68,7 +68,7 @@ class Form {
 		check_ajax_referer( 'subscribe-form', 'nonce' );
 		$email = sanitize_email( filter_input( INPUT_POST, 'email', FILTER_SANITIZE_EMAIL ) );
 
-		if ( ! $email ) {
+		if ( empty( $email ) ) {
 			wp_send_json_error( esc_html__( 'Invalid email address', 'subscribe' ), 400 );
 		}
 
