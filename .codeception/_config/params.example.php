@@ -14,6 +14,7 @@ return [
 	'WP_ADMIN_USERNAME' => 'admin',
 	'WP_ADMIN_PASSWORD' => 'pass',
 	'WP_ADMIN_PATH'     => '/wp-admin',
+	'WP_ROOT_PATH'      => __DIR__ . '/../../../../../',
 	'DB_HOST'           => '127.0.0.1',
 	'DB_NAME'           => 'acceptance_db',
 	'DB_USER'           => 'root',
