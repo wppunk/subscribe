@@ -1,4 +1,6 @@
 modules:
+    enabled:
+        - WPLoader
     config:
         WPLoader:
             wpRootFolder: '%WP_ROOT_PATH%'
