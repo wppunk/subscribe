@@ -2,7 +2,12 @@
 
 use Codeception\TestCase\WPAjaxTestCase;
 
-class SubmissionHandlingTest extends WPAjaxTestCase {
+/**
+ * Class SubmitAjax
+ * @method expectException( string $class )
+ * @method assertEquals( object $param, mixed $json_decode )
+ */
+class SubmitAjax extends WPAjaxTestCase {
 
 	public function test_submit_without_email() {
 
