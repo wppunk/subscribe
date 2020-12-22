@@ -5,7 +5,7 @@
  * @package Subscribe\Tests
  */
 
-namespace Subscribe\Tests;
+namespace Subscribe\Tests\Unit;
 
 use Subscribe\Frontend;
 use WP_Mock;
