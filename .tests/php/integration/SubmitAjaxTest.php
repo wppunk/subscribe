@@ -1,21 +1,23 @@
 <?php
 
-namespace Subscribe\Tests\WPUnit;
+namespace Subscribe\Tests\Integration;
 
-use Codeception\TestCase\WPAjaxTestCase;
 use WPAjaxDieContinueException;
+use Codeception\TestCase\WPAjaxTestCase;
 
 /**
- * Class SubmitAjax
+ * Class SubmitAjaxTest
  * @method expectException( string $class )
  * @method assertEquals( object $param, mixed $json_decode )
  */
-class SubmitAjax extends WPAjaxTestCase {
+class SubmitAjaxTest extends WPAjaxTestCase {
 
+	/**
+	 * Submit form without email field.
+	 */
 	public function test_submit_without_email() {
 
 		$_POST['nonce'] = wp_create_nonce( 'subscribe-form' );
-
 		$this->expectException( WPAjaxDieContinueException::class );
 
 		$this->_handleAjax( 'subscribe_form' );
@@ -29,11 +31,13 @@ class SubmitAjax extends WPAjaxTestCase {
 		);
 	}
 
+	/**
+	 * Submit form with invalid email address.
+	 */
 	public function test_submit_invalid_email() {
 
 		$_POST['nonce'] = wp_create_nonce( 'subscribe-form' );
 		$_POST['email'] = 'krya@krya';
-
 		$this->expectException( WPAjaxDieContinueException::class );
 
 		$this->_handleAjax( 'subscribe_form' );
@@ -47,11 +51,13 @@ class SubmitAjax extends WPAjaxTestCase {
 		);
 	}
 
+	/**
+	 * Succeed submit.
+	 */
 	public function test_submit() {
 
 		$_POST['nonce'] = wp_create_nonce( 'subscribe-form' );
 		$_POST['email'] = 'krya@krya.krya';
-
 		$this->expectException( WPAjaxDieContinueException::class );
 
 		$this->_handleAjax( 'subscribe_form' );

@@ -24,8 +24,9 @@
 	"autoload-dev": {
 		"psr-4": {
 			"Subscribe\\": "src",
-			"Subscribe\\Tests\\": ".tests/php/unit",
-			"Subscribe\\Tests\\WPUnit\\": ".tests/php/wpunit"
+			"Subscribe\\Tests\\Unit\\": ".tests/php/unit",
+			"Subscribe\\Tests\\Acceptance\\": ".tests/php/acceptance",
+			"Subscribe\\Tests\\Integration\\": ".tests/php/integration"
 		}
 	},
 	"require-dev": {
@@ -39,8 +40,8 @@
 	},
 	"scripts": {
 		"acceptance": "codecept run acceptance -c .codeception.yml",
-		"integration": "codecept run wpunit -c .codeception.yml",
+		"integration": "codecept run integration -c .codeception.yml",
 		"unit": "codecept run unit -c .codeception.yml",
-		"clean":  "codecept clean"
+		"clean": "codecept clean"
 	}
 }
